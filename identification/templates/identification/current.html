@@ -1,0 +1,51 @@
+{% extends "identification/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Spectrum V</title>
+    <link rel="stylesheet" href="{% static "identification/currentpage.css" %}">
+  </head>
+
+  <h1>Welcome</h1>
+  <body>
+    <form class="" action="{% url 'accountinfo' %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-primary btn-lg btn-block" id="btn1"><p class="text-dark">Account Info</p></button>
+    </form>
+    <form class="" action="{% url 'billpayment' %}" method="POST">
+      {% csrf_token %}
+      <button type="submit"  class="btn btn-outline-secondary btn-lg btn-block" id="btn2"><p class="text-dark">Pay Bill</p></button>
+    </form>
+    <form class="" action="{% url 'moneysending' %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-success btn-lg btn-block" id="btn3"><p class="text-dark">Send Money</p></button>
+    </form>
+    <form class="" action="{% url 'pulloutmoney' %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-danger btn-lg btn-block" id="btn4"><p class="text-dark">Cash Out</p></button>
+    </form>
+    <form class="" action="{% url 'showreceipts' %}" method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-outline-info btn-lg btn-block" id="btn5"><p class="text-dark">Receipt</p></button>
+    </form>
+
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+{% endblock %}
